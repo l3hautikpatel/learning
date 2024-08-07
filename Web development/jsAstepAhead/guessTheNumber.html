@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locomotive with scrolltrigger</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <style>
+
+
+        body{
+            background-color: #212121;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
+        .loading{
+            display: none;
+            height: 90vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px dotted lightblue;
+            border-radius: 10px;
+        }
+
+        .input{
+            color: #fff;
+            width: 100px;
+            background-color: #423c3c;
+            margin: 10px;
+            padding:10px 10px;
+            border: 2px solid #000000;
+            border-radius: 6px;
+        }
+        .input[type=text]:focus {
+            border: 2px solid #178926;
+            border-radius: 10px;
+        }
+        .submit{
+            background-color: #c47575;
+            padding: 10px;
+            border: 2px solid #7c1414;
+            border-radius: 6px;
+        }
+
+        .gameStates{
+            color: #a7a4a4;
+        }
+        .gameStates span{
+            color: #fff;
+        }
+
+        .gameReset{
+            font-size: 23px;
+            color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading">WE ARE LOADING YOUR GAME WAIT ......</div>
+
+    <div class="main">
+        <h3>Let`s beat this game</h3>
+        <h4>Guess the Number between 1 to 100</h4>
+        <form>
+            <input type="text" class="input" inputmode="number">
+            <input type="submit" class="submit">
+        </form>
+        <div class="gameStates">
+            <h4 class="guessedNumber">You already tried this number <span></span></h4>
+            <h4 class="remianingGuesses">You have left only <span>10</span> guesses</h4>
+        </div>
+        <div class="gameReset">
+            <p class="reset">Restart Game</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        let loading = document.querySelector('.loading');
+        let main = document.querySelector('.main');
+        let input = document.querySelector('.input')
+        let submit = document.querySelector('.submit')
+        let guessedNumber = document.querySelector('.guessedNumber')
+        let remianingGuesses = document.querySelector('.remianingGuesses')
+
+        var randNumber = Math.floor(Math.random() * (100) ) + 1 ; 
+
+        submit.addEventListener("click",(e)=>{
+            e.preventDefault()
+            if(input.value == "") { 
+                alert('Please enter a value!')
+                input.value=""
+            }
+            else if(isNaN(parseInt(input.value))) {
+                alert('Value must be an integer!')
+                input.value=""
+            }
+            else if(parseInt(input.value) < 1 || parseInt(input.value) > 100 ){
+                alert('Enter valid number btw 1 to 100')
+                input.value=""
+            }
+            else{
+                validateValue(parseInt(input.value))
+            }
+        })
+
+        function validateValue(val){
+            if (val == randNumber) {
+                gameOver('You won!', 'green');
+            }else if (val >  randNumber) {
+                giveMessage('Your number is too high');
+            }else if(val < randNumber){
+                giveMessage('Your number is too low');
+            }
+        }
+
+        function giveMessage(msg, color = "red"){
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function loadingScript() {
+        loading.style.display = 'flex'
+        main.style.display = 'none'
+
+        let newLoadingString = ''
+        loading.innerHTML.split(" ").forEach((e)=>{
+            newLoadingString += "<span> &nbsp;&nbsp;" + e + " </span> ";
+        })
+        loading.innerHTML = newLoadingString;
+        function changeScreen(){setTimeout(() => {
+            loading.style.display = "none"
+            main.style.display = "flex"
+        }, 3000);}
+        gsap.from('.loading span',{
+            x: 20,
+            backgroundColor: "#000",
+            opacity: 0,
+            duration: 1,
+            stagger: .3,
+            onComplete: ()=>{changeScreen()}
+        })}
+
+
+
+    </script>
+</body>
+</html>

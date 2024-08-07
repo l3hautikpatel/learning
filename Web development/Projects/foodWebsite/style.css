@@ -1,0 +1,88 @@
+/*
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Condensed', sans-serif; 
+*/
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html ,body{
+height: 100%;
+width: 100%;
+}
+
+
+.main{
+    
+background: rgba(247, 70, 31, 0.34);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9px);
+-webkit-backdrop-filter: blur(9px);
+border: 1px solid rgba(247, 70, 31, 1);
+    /* background: #000; */
+    width: 100%;
+}
+
+.page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+    /* background: url(https://media.istockphoto.com/id/1411790193/photo/abstract-gradient-color-background-yellow-color-mix-with-orange-red-and-brown-background.webp?b=1&s=170667a&w=0&k=20&c=lPajh54v8q77fqz161N8hRc3XllE6PSU50MctVAfhow=); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav{
+    position: absolute;
+    top: 0.1%;
+    background: rgb(248, 93, 46);
+    /* From https://css.glass */
+background: rgba(247, 70, 31, 0.34);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9px);
+-webkit-backdrop-filter: blur(9px);
+border: 1px solid rgba(247, 70, 31, 1);
+    width: 90%;
+    height: 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 5%;
+    margin-top: 0.5%;
+    border-radius: 0px 0px 10px 10px;
+    color: black;
+    padding: 0 2%;
+}
+
+.nav a{
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif; 
+}
+
+.navLeft img{
+    width: 100px;
+}
+
+.navBtw{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.navRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    gap: 10%;
+}

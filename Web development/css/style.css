@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+.bgImg{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1691228334686-be5d1eab7d34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80);
+    background-size:cover;
+    background-position: center ;
+    
+}
+
+.main {
+    width: 20%;
+    height: 70%;
+    background-color: black;
+
+    margin: 100px;
+}
+
+#HId {
+    padding: 50px 10px ;
+    padding-bottom: 0px ;
+    color: #fff;
+    border: 2px solid rebeccapurple;
+}

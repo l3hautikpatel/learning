@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: rejouice;
+    src: url(assets/Rejouice-Headline.woff2);
+}
+
+@font-face {
+    font-family: nbinternational;
+    src: url(assets/NBInternationalProBoo.woff2);
+}
+
+.main {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100%
+}
+
+.page1 {
+    position: relative;
+    top: 0%;
+}
+
+.loading {
+    position: absolute;
+    top: 0%;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: nbinternational;
+}
+
+.loading span {
+    padding-right: 0.7%;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    top: 0%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container video {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container .courcer {
+    z-index: 5;
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #ff5f38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .nav {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    font-family: nbinternational;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 5%;
+
+}
+
+.nav a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+}
+
+.nav button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all ease .5s;
+}
+
+.nav button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease-out, left 0.5s ease-out;
+}
+
+.nav button:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.nav button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease-out, right 0.5s ease-out;
+}
+
+.nav button:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+.navExpand {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 11;
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ff5f38;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: all ease 0.4s;
+}
+
+.navE {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    padding: 2% 5% 0% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: bisque;
+}
+
+.navE a {
+    color: #000;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: rejouice;
+}
+
+.navE button {
+    font-family: nbinternational;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    transition: all ease .5s;
+}
+
+.navEContainer {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    padding: 0% 5% 2% 5%;
+    border-bottom: 1.5px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #fff;
+}
+
+.navELeft {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 30%;
+    overflow: hidden;
+    background-color: aqua;
+}
+.navELeft video {
+    border-radius: 2%;
+    height: 65%;
+    object-fit: cover;
+    width: 25%;
+}
+
+.navELeftFooter{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.navERight{
+    width: 70%;
+}
+
+
+.navEFooter{
+    height: 10%;
+    background-color: bisque;
+    width: 100%;
+}
+
+
+
+
+
+.buttomLine {
+    position: relative;
+    transition: all ease .5s;
+}
+
+.buttomLine::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease-out, left 0.5s ease-out;
+}
+
+.buttomLine:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.buttomLine::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease-out, right 0.5s ease-out;
+}
+
+.buttomLine:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+.container h1 {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    font-family: rejouice;
+    font-size: 26vw;
+    font-weight: 100;
+}

@@ -1,0 +1,89 @@
+body::-webkit-scrollbar {
+    /* display: none; */
+    background-color: #000;
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #96c11eaf;
+    border-radius: 25px;
+}
+
+
+.animation-page1 {
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-page1 h4 {
+    font-size: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.animation-page1 h4::before {
+    content: "";
+    overflow: hidden;
+    height: 10px;
+    width: 0%;
+    background-color: #96c11eaf;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.animation-page1 h4:hover:before {
+    animation-name: h4Hover;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes h4Hover {
+    0%{
+        width: 0%;
+        left: 0%;
+    }
+    50%{
+        width: 100%;
+        left: 0%;
+    }
+    100%{
+        width: 0%;
+        left: 100%;
+    }
+}
+
+
+
+.animation-page2 {
+    height: 100vh;
+    width: 100%;
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    background-color: royalblue;
+    position: relative;
+    animation-name: nameofanimation;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes nameofanimation {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 70%;
+        background-color: rosybrown;
+    }
+}

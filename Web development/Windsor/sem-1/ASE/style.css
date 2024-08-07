@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#canvas-container {
+    border: 1px solid #ddd;
+}
+
+#screen-canvas {
+    width: 640px;
+    height: 480px; /* Adjust canvas size as needed */
+}
